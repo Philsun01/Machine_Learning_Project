@@ -62,9 +62,9 @@ print(model1$finalModel)
 ```
 
 ## Test Set Answers
-```{r Test_set_prediction, echo = FALSE}
+```{r Test_set_prediction, echo = FALSE, cache=TRUE}
 answer <- predict(model1,testing4)
-paste("The 20 predicted classifications for the test set are:", answer)
+answer
 ```
 
 ## Cross Validating and Sample Error
@@ -72,7 +72,7 @@ For cross validation purposes we will first break up the data into 10 groups (10
 
 Since running a model on the entire dataset will take over an hour each time on my computer, I will make a model for each fold and test against the next fold, thus 5 models and 5 tests sets. Train fold 1, test on fold 2. Train fold 3, test on fold 4, etc.
 
-```{r Fold_data, cache=TRUE}
+```{r Fold_data, cache=TRUE, results='hide'}
 set.seed(1234) #Create the grouping numbers
 folds <- createFolds(training4$classe,k = 10)
 
@@ -116,8 +116,8 @@ Using the Miss Classification function provided from the previous lessons, we'll
 
 ```{r MisClassification}
 round(MC,3)
-barplot(MC, main = "Miss Classification Rates")
-print("Estimate for Out of Sample Error")
+barplot(MC, main = "Miss Classification Rates", ylim=c(0, .1), xlab = "5 Random Forest Models")
+
 mean(MC)
 ```
-**My estimate for out of sample error is 3%**
+**My estimate for out of sample error is 2.7%**
