@@ -1,6 +1,8 @@
 ---
 title: "Health_Prediction"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 ```{r Setup_parallel,echo=FALSE, results='hide'}
 # Speed up training

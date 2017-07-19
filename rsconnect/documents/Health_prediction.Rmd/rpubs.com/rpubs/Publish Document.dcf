@@ -1,0 +1,8 @@
+name: Publish Document
+title:
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/292476/f40667a4f8e34811ae6a639456cc98d8
+bundleId: https://api.rpubs.com/api/v1/document/292476/f40667a4f8e34811ae6a639456cc98d8
+url: http://rpubs.com/Philsun/292476/edit
+when: 1500489836.139
